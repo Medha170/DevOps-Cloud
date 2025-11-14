@@ -1,0 +1,22 @@
+How two VM's connection is different?
+1. entire network stack different:
+- IP Address
+- Port Ranges
+- Socket Ranges
+2. different process(execution unit) space
+3. different file system space
+4. different host name space
+5. different user space
+6. IPC (Inter Process Communication) space vs RPC (Remote Procedure Call)
+
+container:
+-containerd creates separates spaces and attach to container process(containerd-shim-runc-v2)
+A container is a process running in isolated environment in a host machine.
+
+ephemeral: opposite of durable
+- docker container is ephemeral in nature
+- it can go down for valid reasons (if there are no processes running inside it, it will crash)
+
+CGroups: control groups
+- resource management
+- limit resource usage of a process
