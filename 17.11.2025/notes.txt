@@ -1,0 +1,20 @@
+writable layer of the container: it is not getting killed if the container is stopped or removed.
+docker rm -f <container_id>: will forcefully remove the container killing the writable layer as well.
+
+volumes: it is way to persist data outside the container's writable layer. Volumes are stored in a part of the host filesystem which is managed by Docker (/var/lib/docker/volumes/ on Linux). Volumes are not removed when a container is deleted, unless you explicitly remove them. And it can be used in another container if the current container stops abruptly.
+
+types of volumes:
+1. tmpfs: it gets deleted when the container stops. It is used to store some data which is not required after the container restarts. When a container is restarted, it will have a fresh tmpfs layer.
+start, it will refer to:
+-image
+-writable
+2. bind mount: it is used to attach anything to a container but is risky as critical folders can also be attached.
+3. volumes 
+- named volumes
+- anonymous volumes
+
+docker volume inspect <volume_name>: to get the details of the volume.
+
+binding a volume to a container:
+docker run -v <host_path>:<container_path> <image_name>
+docker run -it -v scalervol:/nov17 ubuntu bash

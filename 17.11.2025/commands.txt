@@ -1,0 +1,33 @@
+ history
+   0 docker run -it ubuntu bash
+   1 docker ps -a
+   2 docker exec -it c4 bash
+   3 docker start c4
+   4 docker exec -it c4 bash
+   5 history
+   6 docker run -it -v /home/volume/:/myvolume ubuntu bash
+   7 ls
+   8 cd ..
+   9 ls
+  10 cd volume/
+  11 ls
+  12 cd ..
+  13 cd volume/
+  14 mkdir scaler
+  15 docker ps -a
+  16 docker start bb bash
+  17 docker start bb
+  18 docker exec -it bb bash
+  19 cd ..
+  20 cd user/
+  21 history
+   0 docker run -d -e MYSQL_ROOT_PASSWORD=admin -v /home/docker/mysql-data:/var/lib/mysql --name mysqlserver mysql
+   1 docker ps -a
+   2 docker exec -it 8b bash
+   3 docker ps -a
+   4 docker stop 8b
+   5 cd /home/docker/mysql-data/
+   6 ls
+   7 cd classicmodels/
+   8 ls
+   9 history
