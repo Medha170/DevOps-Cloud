@@ -1,0 +1,30 @@
+history
+   0 ip a
+   1 ping google
+   2 ping localhost
+   3 history
+   0 ip a
+   1 ping 172.17.0.3
+   2 ping 172.17.02
+   3 history
+history
+   0 ip a
+   1 docker run -d nginx 
+   2 docker ps
+   3 docker inspect 60
+   4 ip a
+   5 docker stop 60
+   6 ip a
+   7 docker run -it alpine ash
+   8 docker -it alpine ash
+   9 docker run -it alpine ash
+  10 docker ps
+  11 docker network ls
+  12 docker network inspect bridge
+  13 history
+  14 docker network create mybridge
+  15 ip a
+  16 docker run -d --net mybridge nginx
+  17 docker network ls
+  18 docker container inspect 0f 
+  19 history

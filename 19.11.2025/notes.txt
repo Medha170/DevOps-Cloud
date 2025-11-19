@@ -1,0 +1,32 @@
+Docker Networking
+IP Address: unique rootable address given to a device ona network which follows the IP protocol for communitaion.
+Ethernet Card: hardware component that connects a computer to a network using Ethernet protocol. and connect it to a network switch
+Ethernet Cable: hardware to connect devices to network switches.
+A device can have mutiple IP addresses if it has multiple network interfaces.
+Network switch: it follows ARP protocol to map IP addresses to MAC addresses and forwards data packets to the correct device on a local network. it broadcasts ARP requests to all devices on the local network to find the MAC address associated with a specific IP address.
+-Default Route: if all the other routes do not match, the default route is used to forward the packet.
+Gateway: a device that connects two different types of networks and routes traffic between them.
+Subnet Mask: a 32-bit number that divides an IP address into network and host portions, determining which part of the address identifies the network and which part identifies the device on that network.
+192.168.10.0/24: 24 is subnet mask, 32-24=8 bits for host portion, 2^8-2=254 IPs
+
+Some Table:
+Network:  1   2   4   8   16   32   64   128   256
+Host:     256 128 64  32  16   8    4     2     1
+Subnet:   /24 /25 /26 /27 /28  /29  /30  /31   /32
+                                         Network ID:   Broadcast ID:  Representation:
+IP Range: 192.168.10.0 - 192.168.10.63   192.168.10.0  192.168.10.63  192.168.10.0/26
+          192.168.10.64 - 192.168.10.127 192.168.10.64 192.168.10.127 192.168.10.64/26
+
+/32 : 32 is the belong to network portion, 0 bits for host portion, only one IP
+/31 : 31 is the belong to network portion, 1 bit for host portion, 2 IPs
+/30 : 30 is the belong to network portion, 2 bits for host portion, 4 IPs
+/29 : 29 is the belong to network portion, 3 bits for host portion, 8 IPs
+/28 : 28 is the belong to network portion, 4 bits for host portion, 16 IPs
+
+192.168.10.0/23: 23 is subnet mask, 32-23=9 bits for host portion, 2^9=512 IPs
+192.168.10.0 - 192.168.11.255  (512 IPs)
+
+eth0: ethernet card
+docker0: switch
+
+vethXXX: ethernet cable
