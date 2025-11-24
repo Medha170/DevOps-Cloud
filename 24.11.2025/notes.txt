@@ -1,0 +1,41 @@
+Kubernetes
+- Kubernetes is a container orchestrator
+- Automatic bin packing
+- Fail over: if a pod is crashing, it will be recreated somewhere else
+- Automatic Scaling:
+- Load balancing: distribute the traffic, service discovery
+- jobs: scheduled tasks
+- manages secrets
+- manages certificates
+
+Kubernetes Architecture
+node: a machine (physical or virtual) that runs containerized applications
+two machine types:
+- control plane (master nodes) (managing cluster)
+- data plane (worker nodes) (running applications)
+
+kubectl: client which communicates with the API server to manage the cluster with REST APIs
+
+Control Plane components:
+- apiserver: exposes the Kubernetes API 
+-- authenticate, authorize, and validate requests, talk to etcd(CRUD operations)
+- etcd: key-value store for all cluster data, NoSQL database(they can scale horizontally)
+- scheduler: assigns workloads to nodes(identify which node to run the pod on)
+- controller-manager: runs controller processes(ensure the desired state = current state of the pod)
+
+Worker Node components:
+- kubelet: agent that runs on each node, ensures containers are running in a Pod()
+- kube-proxy: network proxy that maintains network rules on nodes
+- Container runtime: software that runs containers (e.g., Docker, containerd, CRI-O)
+
+Pods
+- a group of one or more containers with shared storage/network, and a specification for how to run the containers
+
+event driven architecture
+
+- workflow:
+1. user interacts with kubectl
+2. kubectl sends REST API requests to the apiserver
+3. apiserver processes the requests, updates etcd
+4. scheduler assigns pods to nodes
+5. apiserver will talk to kubelet on the assigned node ensures the pod is running
