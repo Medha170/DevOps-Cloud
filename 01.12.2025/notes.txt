@@ -1,0 +1,42 @@
+kubectl requests API server (REST Api)
+API server
+- authenticate 
+- authorize
+- validate
+- then talks to etcd (key-value store)
+
+scheduler
+- event driven architecture 
+- identify node for pod placement
+
+pod:
+- API talks to kubelet on node
+- creates a pod
+
+kubelet:
+- works with CRI to create pod
+- constantly reports status to API server
+- constantly passes the node status to API server
+
+kubernetes is a platform where we can deploy containerized applications.
+
+there can be multiple containers in a pod but the good practice is to have one container per pod.
+
+Pods:
+- it is group of one or more containers, which are independently able to do certain things but alawys work together.
+- all containers in a pod are co scheduled, are colocated
+- it gets created in the data plane (node) by kubelet
+
+kubeproxy is there in all the worker and master nodes
+
+static pods:
+
+sider range pods: 
+
+namespace: 
+- it is a virtual cluster inside a physical cluster
+ 4 types of namespaces:
+    - default
+    - kube-system
+    - kube-public
+    - kube-node-lease

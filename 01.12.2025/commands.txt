@@ -1,0 +1,5 @@
+kubeadm init: intializes a master node for a Kubernetes cluster.
+history
+    1  systemctl status kubelet
+    2  kubectl get ns
+    3  history
