@@ -1,0 +1,24 @@
+load balancers: kubernetes service
+1. distribute load
+2. service discovery: distribute traffic to pods based on labels
+
+kubernetes serivce: represents a logical grouping of pods. One or more pods
+
+Kubernetes supports 4 types of services:
+1. ClusterIP: We can have different cluster Ip for different services.
+    - port: port of one cluster IP
+    - targetPort: port of the target pod
+never talk to pod directly using podIP
+    - if pod crashes no gaurantee that the new replaced pod will have the same IP
+    - multiple pods/services may talk to only one instance 1. not using other instances 2. pod itself may crash
+to solve this we must always use ClusterIP to talk to pods
+
+2. NodePort: ClusterIP cannot be used by other machine outside the cluster
+30000-32767
+    - it should be free in every machine in the cluster, which will have a clusterIP and clusterIP will take care of loadbalancing
+    - NodePort
+    - port
+    - targetPort
+3. LoadBalancer:
+4. ExternalIPs:
+

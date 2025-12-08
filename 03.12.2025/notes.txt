@@ -1,0 +1,15 @@
+watch -n 1 kubectl get po -n kube-system
+kube-system namespace: all the components in control plane
+
+if a pod is crashing, kubelet will get to know about it and it will restart another pod to replace it with the help of controller runtime 
+and inform the api server about the new pod status in control plane
+
+if the whole node is going down, then all the pods running on that node will go down
+
+yaml: will have the following four things:
+apiVersion
+kind
+metadata
+spec
+
+never use tab in yaml
