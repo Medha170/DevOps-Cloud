@@ -1,0 +1,22 @@
+internally replicaset creates pods
+
+if container crashed in a pod, it will be replaced 
+
+advantages of replicaset:
+- we get n number of replicas
+- we can easily scale out or scale in
+
+with deployement we get all these advantages + ability to do rolling updates and rollbacks
+
+ZDU: zero downtime upgrades
+
+rolling update: create a new version of pod then deleting the older version 
+
+deployment table:
+deployment controller
+sno, name, desired state, current state, image
+
+Scaling:
+HPA: horizontal pod autoscaler
+VPA: vertical pod autoscaler
+CA: cluster autoscaler
