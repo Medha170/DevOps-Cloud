@@ -7,9 +7,25 @@ and inform the api server about the new pod status in control plane
 if the whole node is going down, then all the pods running on that node will go down
 
 yaml: will have the following four things:
-apiVersion
-kind
-metadata
-spec
+apiVersion: current version of the resource
+kind: type of resource
+metadata: name, namespace, labels, annotations
+spec: specification of the resource
 
 never use tab in yaml
+key: value (key value pair)
+list: 
+  - item1
+  - item2
+map
+
+kubectl apply -f <filename>.yaml : to create resource from yaml file
+
+Replicaset: ensures that a specified number of pod replicas are running at any given time
+if a pod goes down, replicaset will create another pod to maintain the desired number of replicas
+
+one controller in controller was replication controller
+etcd:
+sno, pod name, image, node name, desired status, current status
+replicaset table:
+sno, name, desired replicas count, actual replicas count, image
