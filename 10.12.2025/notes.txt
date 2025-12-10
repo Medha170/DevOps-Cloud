@@ -1,0 +1,36 @@
+Internals of kubernetes services
+selectors are in services, and labels are in deployments
+
+1. within a pod if there are multiple containers, they can communicate to each other via localhost and ports
+2. how within the same node, two different containers in different pods communicate?
+3. how across different nodes, two different containers in different pods communicate?
+4. how can a container talk to a kubernetes service(clusterIP)
+    - it will load balance and it will forward request to one container in a pod?
+
+6 different namespaces:
+- network spaces
+- hostname spaces
+- process spaces
+- IPC to RPC spaces
+- user spaces
+- file system spaces
+
+1. 
+localhost is for root network space
+netns
+- each pod has its own network namespace
+- they will talk to each other via localhost
+
+2. 
+custom bridge(cbr): it is like dokcer0 bridge in docker, linux kernel capabilities
+
+3.
+network plugin: default route (weave)
+
+4. 
+kube-proxy: 
+- it programs iptables rules to do load balancing across pods
+iptables has rules for each node
+ - if it has this destination IP (clusterIP of service), then it will DNAT to one of the pod IPs
+DNAT: Network Address Translation, when we change the destination address of packets
+kubelet is heartbeat for each node, it will report to apiserver, each node will have kubeproxy, will ask apiserver, what are the services and endpoints? it will be recorded in etcd
