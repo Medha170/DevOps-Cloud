@@ -1,0 +1,23 @@
+HPA: Horizontal Pod autoscaler
+
+Setp 1: enable overlay and netfilter
+Step 2: disable swap
+swapspace: It is a portion of a hard drive that is used as virtual memory when the physical RAM is full. It allows the system to continue functioning by temporarily moving inactive pages of memory to the swap space on the hard drive. This helps to free up RAM for active processes and can improve overall system performance.
+Why disable swap for k8s?
+Kubernetes relies on the availability of memory resources to effectively manage and schedule containers. When swap is enabled, the operating system may move inactive memory pages to swap space, which can lead to performance degradation and instability for applications running in containers. Disabling swap ensures that Kubernetes has accurate visibility into the available memory resources, allowing it to make informed decisions about resource allocation and scheduling.
+
+docker internally uses containerd
+
+Step 3: install containerd
+Step 4: install crictl(client for containerd)
+Step 5: install kubeadm, kubelet, kubectl
+Step 6: kubeadm init
+Step 7: join worker to master
+Step 8: install network plugin(weave/flannel/calico)
+
+metric server: It is a component in Kubernetes that collects and aggregates resource usage metrics from various sources within the cluster, such as nodes and pods. The metrics server provides a centralized way to monitor the performance and resource utilization of the cluster, enabling administrators to make informed decisions about scaling, resource allocation, and troubleshooting.
+
+Step 9: deploy metric server
+
+this will be internally used by HPA to get metrics like CPU and Memory usage of pods
+here we are adding more pods when CPU usage goes beyond threshold limit
