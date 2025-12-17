@@ -1,0 +1,34 @@
+earlier 
+
+waterfall:
+ra -> design -> coding -> testing -> deployment
+
+agile:
+iterations -> feedback -> improvement -> delivery
+disavantage:
+- when will you release it? but it was never delievered to customer
+
+DevSecOps:
+Integration
+github -> linting -> download dependencies -> SCA -> SAST -> Packaging (jar/war/gem/exe) -> Unit Testing -> Dockerization -> Tesing containers -> Trivy -> push to JFrog artifactory(Nexus/ECR/ACR/DockerHub)
+
+Continous Deployment:
+SIT(System Integration Testing, deploy testcases) -> security (deploy, run testcases)(DAST) -> performance test environment(deploy, run testcases)(JMeter/Gatling) -> NLP integration(deploy, testing) -> AB testing ; (stopping till here is continous delivery)-> Production
+
+SCA vs SAST:
+SCA: Software Composition Analysis - focuses on open source components and their vulnerabilities.
+SAST: Static Application Security Testing - analyzes source code for security vulnerabilities.
+
+- Who does this? DevOps engineer, DevSecOps engineer (but according to devops principle, there should not be any separate role, instead developer should collaborate with each other to ensure security is integrated throughout the development process)
+- What are different testing? Unit Testing, Integration Testing, etc
+- What is the advantage of DevOps? 
+        deliver software iteratively faster
+        automation of processes
+        not compromise on quality
+
+feature flagging: 
+- thing should not be deployed util the flag is turned true
+
+DevSecOps vs CyberSeurity engineer:
+DevSecOps engineer: Integrates security practices into the DevOps process, focusing on automation and collaboration to ensure secure software delivery.
+CyberSecurity engineer: Focuses on protecting systems, networks, and data from cyber threats through monitoring, incident response, and implementing security measures.
