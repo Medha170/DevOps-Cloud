@@ -1,4 +1,4 @@
 SCA -> for dependencies vulnerabilities
 SAST -> for code vulnerabilities
 DAST -> for running application vulnerabilities
-Trrivy -> container vulnerabilities
+Trivy -> container vulnerabilities
