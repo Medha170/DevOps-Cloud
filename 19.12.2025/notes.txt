@@ -1,0 +1,5 @@
+workflow dispatch
+
+uses vs run:
+uses: when you want to use an existing action from the marketplace or a reusable workflow.
+run: when you want to execute a specific command or script directly within your workflow.
