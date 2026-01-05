@@ -1,0 +1,14 @@
+1980  cd Desktop/Projects/
+ 1981  git clone https://github.com/Medha170/docker-k8s.git
+ 1982  git clone https://github.com/Medha170/sst-demo.git
+ 1983  cd docker-k8s/
+ 1984  cp -R ./src/ .
+ 1985  cd ..
+ 1986  cd sst-demo/
+ 1987  cp -R ../docker-k8s/src/ .
+ 1988  cp ../docker-k8s/Dockerfile .
+ 1989  cp ../docker-k8s/pom.xml .
+ 1990  code .
+ 1991  git add .
+ 1992  git commit -m "init"
+ 1993  git push
