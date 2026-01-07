@@ -1,0 +1,7 @@
+CI -> Github actions
+CD -> AWS + github actions
+kubectl taint: 
+A taint in Kubernetes is a mechanism that allows a node to repel a set of pods.
+
+runner in github actions: 
+- runner is a virtual machine that runs the GitHub Actions workflow and executes the steps defined in the workflow.
