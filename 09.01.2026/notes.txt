@@ -1,0 +1,55 @@
+DevOps other than CI/CD
+Monitoring(Prometheus, Grafana)
+Infrastructure as code(Terraform, Ansible)
+
+Infrastructure as Code (IaC)
+- Infrastructure provisioning tools: (AWS CloudFormation, Azure BICEPS, Terraform) create, provision the infrastructure, we can modify the infrastructure as well.(200+ providers in terraform)
+- Configuration management tools: (Ansible, Puppet, Chef) manage the configuration of the infrastructure after it is provisioned.
+  - push(Ansible(SSH connectivity do not need an agent in the server)) - pull(Puppet, Chef(agent should be installed in the server))
+- Server Templating tools: (Vagrant, Docker) create a virtual environment for the infrastructure. vagrant + oracle box(hypervisor) 
+
+Why Infra provisioning tools?
+1. Speed
+2. Consistency
+3. Version Control
+4. Collaboration
+
+Configuration drift: when the configuration of the infrastructure changes over time due to manual changes or updates, leading to inconsistencies between the actual state and the desired state defined in the code.
+
+Kubernetes > Docker > Terraform > Ansible
+
+Terraform
+---------
+
+.tf extension
+
+declarative language: we define the desired state of the infrastructure, and the tool figures out how to achieve that state.
+
+terraform is platform agnostic: works with multiple cloud providers(AWS, Azure, GCP) and on-premises infrastructure.
+
+aws api -> module
+code -> apply (internally calls aws api and download the module inside .terraform folder) 
+
+terraform init
+- to download the provider module
+- locks the version of the provider( it is not backward compatible)
+- 
+
+terraform plan
+- to create an execution plan
+- shows what changes will be made to the infrastructure without actually applying them
+
++ : to add
+- : to delete
+~ : to modify
+
+terraform apply
+- to apply the changes required to reach the desired state of the configuration
+
+terrform tfstate file checks from:
+- from cloud
+- from local .tf files
+- from last version
+
+terraform destroy
+- to destroy the Terraform-managed infrastructure
