@@ -1,0 +1,32 @@
+Variables in terraform:
+Local
+Input
+Output: something which I can print on screen
+
+*Type: we can define, default string
+
+terraform.tfvars: this will override the values in variables.tf
+
+/..: cidr
+Instance_type: t2.micro, etc
+Instance_ami: ami number
+
+Route table: where the request should go in a particular IP range
+
+Implicit dependency: terraform automatically figures out the dependency based on the resource references
+
+Private subnet: subnet which has no access to internet gateway 
+
+Nat gateway: talk to s3 bucket and dynamodb without using internet 
+
+*Resource: configuring some stack in terraform from scratch
+
+* Data: not hardcoding, getting the value from AWS
+
+22: allow ssh
+8080: tomcat listens on it
+80: http
+
+* Output: to print the value on the screen after applying the terraform code
+
+* = terrform blocks
